@@ -1,0 +1,75 @@
+{
+    "7303": {
+        "args": [
+            {
+                "data_type": "LINE",
+                "name": "previous_line",
+                "value": "Receipt Item Details@0"
+            }
+        ],
+        "code": "\timport json\n\tdata = json.loads(previous_line)\n\tkey_order = [\"Description\",\"Quantity\",\"Amount\"]\n\tfor record in data:\n\t    reordered_record = {\n\t        key: \"N/A\" if not record.get(key) or record.get(key) == \"null\" else record[key]\n\t        for key in key_order\n\t    }\n\t    for key in record.keys():\n\t        if key not in reordered_record:\n\t            reordered_record[key] = \"N/A\" if record[key] is None or record[key] == \"null\" else record[key]\n\t    record.clear()\n\t    record.update(reordered_record)\n\toutput = json.dumps(data, indent=4)\n\treturn output",
+        "docstring": null,
+        "lambda_end_of_life": null,
+        "lambda_id": "11",
+        "lambda_udf_id": "v1:AWS_LAMBDA:1907257645:insaprd-use2-aihub-prd-docker-default-udf:10",
+        "last_updated_at": "1741353588000",
+        "name": "reorder_columns",
+        "udf_type": "REFINER"
+    },
+    "7304": {
+        "args": [
+            {
+                "data_type": "FIELD",
+                "name": "Receipt_Item_Details",
+                "value": "Receipt Item Details"
+            },
+            {
+                "data_type": "FIELD",
+                "name": "Subtotal",
+                "value": "Subtotal"
+            }
+        ],
+        "code": "\timport json\n\tReceipt_Item_Details = (json.loads(Receipt_Item_Details))\n\tSubtotal = float(Subtotal)\n\tcalculated_subtotal = sum(float(item[\"Amount\"]) for item in Receipt_Item_Details)\n\tif calculated_subtotal== Subtotal:\n\t\treturn None\n\telse:\n\t\treturn \"Subtotal is not equal to the total of the Receipt Item Details\"\n\t",
+        "docstring": null,
+        "lambda_end_of_life": null,
+        "lambda_id": "11",
+        "lambda_udf_id": "v1:AWS_LAMBDA:6699268957:insaprd-use2-aihub-prd-docker-default-udf:10",
+        "last_updated_at": "1741353590000",
+        "name": "Check_subtotal",
+        "udf_type": "VALIDATIONS"
+    },
+    "7305": {
+        "args": [
+            {
+                "data_type": "FIELD",
+                "name": "Bank_Name",
+                "value": "Bank Name"
+            }
+        ],
+        "code": "\t# Import Python packages\n\t# import json\n\t\n\t# Log statements using print()\n\t# print(\"This will appear in the logs\")\n\t\n\tif Bank_Name:\n\t\t# Return None to indicate validation passed\n\t\treturn None\n\telse:\n\t\t# Return a string to indicate validation failed\n\t\treturn \"Error: Bank_Name is empty\"",
+        "docstring": null,
+        "lambda_end_of_life": null,
+        "lambda_id": "11",
+        "lambda_udf_id": "v1:AWS_LAMBDA:2829272612:insaprd-use2-aihub-prd-docker-default-udf:10",
+        "last_updated_at": "1741353591000",
+        "name": "unnamed_custom_function",
+        "udf_type": "VALIDATIONS"
+    },
+    "7306": {
+        "args": [
+            {
+                "data_type": "FIELD",
+                "name": "Bank_Name",
+                "value": "Bank Name"
+            }
+        ],
+        "code": "    if len(Bank_Name) >= 20:\n        return \"Error: 'Bank Name' should be less than 20 letters.\"\n    return None",
+        "docstring": null,
+        "lambda_end_of_life": null,
+        "lambda_id": "11",
+        "lambda_udf_id": "v1:AWS_LAMBDA:1936695658:insaprd-use2-aihub-prd-docker-default-udf:10",
+        "last_updated_at": "1741353592000",
+        "name": "validate_bank_name",
+        "udf_type": "VALIDATIONS"
+    }
+}

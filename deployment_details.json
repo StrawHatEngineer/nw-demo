@@ -1,0 +1,47 @@
+{
+    "app_name": "CICD Build App",
+    "app_version": "0.0.1",
+    "created_at_ms": 1742318302000,
+    "deployed_solution_id": "b6cf94d3-d446-429b-a756-92733966de6a",
+    "description": "",
+    "human_review_level": "doc_based",
+    "human_review_mode": "ON",
+    "id": "0195aa43-73aa-78b7-b980-65464d8527ac",
+    "last_run_job_id": "7a034995-6c50-4858-a54c-9a2cb6c57fa5",
+    "last_run_status": "CANCELLED",
+    "last_run_timestamp_ns": 1751012046946848207,
+    "metric_alerts": null,
+    "name": "CICD Build App",
+    "notification_emails": [
+        {
+            "emails": [
+                "vinay.thapa@instabase.com"
+            ],
+            "events": [
+                "run.started",
+                "run.requires_review"
+            ],
+            "name": "vinay"
+        }
+    ],
+    "owner": "vinay.thapa_instabase.com",
+    "retention_settings": {
+        "days_until_deletion": 10,
+        "enabled": true,
+        "keep_source_files": false
+    },
+    "review_within_sec": 1800,
+    "state": "ACTIVE",
+    "updated_at_ms": 1751615248000,
+    "webhooks": [
+        {
+            "events": [
+                "run.started"
+            ],
+            "headers": {},
+            "name": "testing",
+            "url": "hatpajpdpastos"
+        }
+    ],
+    "workspace": "CICD"
+}

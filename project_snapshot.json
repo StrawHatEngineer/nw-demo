@@ -1,0 +1,811 @@
+{
+    "project_data": {
+        "activeDeployedSolutionId": "b6cf94d3-d446-429b-a756-92733966de6a",
+        "createdAtMs": "1741353585000",
+        "creationBase": "NONE",
+        "dataMountPath": "ib-internal/CICD/fs/Instabase Drive/aihub/019570c3-0acf-7efa-8450-61572e076c04",
+        "description": "CICD Build App",
+        "extractionMode": "SPLIT_CLASSIFICATION",
+        "id": "019570c3-0acf-7efa-8450-61572e076c04",
+        "llm": "gpt-3.5-turbo",
+        "name": "CICD Build App",
+        "owner": "67d786be-6a34-4b23-a196-f8174e6ff6ea",
+        "ownerPublicId": "vinay.thapa_instabase.com",
+        "projectMountPath": "ib-internal/CICD/fs/Instabase Drive/aihub/019570c3-0acf-7efa-8450-61572e076c04",
+        "repoId": "62194a62-3619-4d9e-9930-99f83df2be96",
+        "schemaVersion": "1",
+        "settings": {
+            "advanced_ocr": {
+                "isChangeLanguageType": false,
+                "isSelectCheckboxes": true,
+                "isSelectFileAsImage": false,
+                "isSelectTables": true,
+                "languageType": "standard",
+                "nativeExcelProcessing": true,
+                "pagesText": "",
+                "version": "v1"
+            }
+        },
+        "type": "BUILD",
+        "updatedAtMs": "1741353587000",
+        "workspace": "CICD"
+    },
+    "project_schema": {
+        "case_fields": [],
+        "classes": {
+            "Bank Statement": {
+                "class_id": "156390",
+                "description": "",
+                "fields": [
+                    {
+                        "data_type": "TEXT",
+                        "description": null,
+                        "field_id": "479241",
+                        "lines": [
+                            {
+                                "function_args": [
+                                    {
+                                        "data_type": "TEXT",
+                                        "name": "input__format",
+                                        "value": "\"\""
+                                    },
+                                    {
+                                        "data_type": "TEXT",
+                                        "name": "output__format",
+                                        "value": "\"yyyymmdd\""
+                                    }
+                                ],
+                                "function_id": null,
+                                "line_type": "NATIVE",
+                                "native_fn_name": "format_date",
+                                "prompt": null
+                            }
+                        ],
+                        "model_type": "DEFAULT",
+                        "name": "Statement Start Date",
+                        "position": 1,
+                        "prompt": "Statement Start Date",
+                        "prompt_schema": null,
+                        "prompt_type": "basic"
+                    },
+                    {
+                        "data_type": "TEXT",
+                        "description": null,
+                        "field_id": "479242",
+                        "lines": [
+                            {
+                                "function_args": [
+                                    {
+                                        "data_type": "TEXT",
+                                        "name": "input__format",
+                                        "value": "\"\""
+                                    },
+                                    {
+                                        "data_type": "TEXT",
+                                        "name": "output__format",
+                                        "value": "\"yyyymmdd\""
+                                    }
+                                ],
+                                "function_id": null,
+                                "line_type": "NATIVE",
+                                "native_fn_name": "format_date",
+                                "prompt": null
+                            }
+                        ],
+                        "model_type": "DEFAULT",
+                        "name": "Statement End Date",
+                        "position": 2,
+                        "prompt": "Statement End Date",
+                        "prompt_schema": null,
+                        "prompt_type": "basic"
+                    },
+                    {
+                        "data_type": "TABLE",
+                        "description": "Transactions list.",
+                        "field_id": "479243",
+                        "lines": [
+                            {
+                                "function_args": [],
+                                "function_id": null,
+                                "line_type": "PROMPT",
+                                "native_fn_name": null,
+                                "prompt": "Remove currency and negative signs. Date format \"MM/DD/YYYY\""
+                            }
+                        ],
+                        "model_type": "DEFAULT",
+                        "name": "Transactions",
+                        "position": 3,
+                        "prompt": "Transactions list",
+                        "prompt_schema": null,
+                        "prompt_type": "basic"
+                    },
+                    {
+                        "data_type": "TEXT",
+                        "description": "What country issued was the statement issued from?",
+                        "field_id": "479244",
+                        "lines": [
+                            {
+                                "function_args": [],
+                                "function_id": null,
+                                "line_type": "PROMPT",
+                                "native_fn_name": null,
+                                "prompt": "Return the country name as a 3 character ISO code only"
+                            }
+                        ],
+                        "model_type": "DEFAULT",
+                        "name": "Statement Country",
+                        "position": 5,
+                        "prompt": "What country issued was the statement issued from?",
+                        "prompt_schema": null,
+                        "prompt_type": "advanced"
+                    },
+                    {
+                        "data_type": "TEXT",
+                        "description": "Bank Name",
+                        "field_id": "479245",
+                        "lines": [],
+                        "model_type": "DEFAULT",
+                        "name": "Bank Name",
+                        "position": 0,
+                        "prompt": "Bank Name",
+                        "prompt_schema": null,
+                        "prompt_type": "basic"
+                    },
+                    {
+                        "data_type": "TEXT",
+                        "description": "",
+                        "field_id": "479246",
+                        "lines": [
+                            {
+                                "function_args": [
+                                    {
+                                        "data_type": "FIELD",
+                                        "name": "Statement_Start_Date",
+                                        "value": "Statement Start Date"
+                                    },
+                                    {
+                                        "data_type": "FIELD",
+                                        "name": "Statement_End_Date",
+                                        "value": "Statement End Date"
+                                    }
+                                ],
+                                "function_id": null,
+                                "line_type": "PROMPT",
+                                "native_fn_name": null,
+                                "prompt": "\\ Statement End Date \\ to \\ Statement Start Date \\ - in month"
+                            }
+                        ],
+                        "model_type": "DEFAULT",
+                        "name": "Duration",
+                        "position": 4,
+                        "prompt": "",
+                        "prompt_schema": null,
+                        "prompt_type": "derived"
+                    },
+                    {
+                        "data_type": "TEXT",
+                        "description": "transaction",
+                        "field_id": "646157",
+                        "lines": [],
+                        "model_type": "DEFAULT",
+                        "name": "transaction",
+                        "position": 6,
+                        "prompt": "transaction",
+                        "prompt_schema": null,
+                        "prompt_type": "basic"
+                    }
+                ]
+            },
+            "Driver License": {
+                "class_id": "156392",
+                "description": "",
+                "fields": [
+                    {
+                        "data_type": "TEXT",
+                        "description": "return in the format MM/DD/YYYY and it generally comes after \\\"DOB\\\" or \\\"Date of Birth\\\"",
+                        "field_id": "479256",
+                        "lines": [],
+                        "model_type": "DEFAULT",
+                        "name": "Date Of Birth",
+                        "position": 3,
+                        "prompt": "Date Of Birth",
+                        "prompt_schema": null,
+                        "prompt_type": "basic"
+                    },
+                    {
+                        "data_type": "TEXT",
+                        "description": "return either as M or F",
+                        "field_id": "479257",
+                        "lines": [],
+                        "model_type": "DEFAULT",
+                        "name": "Gender",
+                        "position": 6,
+                        "prompt": "Gender",
+                        "prompt_schema": null,
+                        "prompt_type": "basic"
+                    },
+                    {
+                        "data_type": "TEXT",
+                        "description": "Return the driver full name (First name, middle name if any then last name) on whom license was issued.",
+                        "field_id": "479258",
+                        "lines": [],
+                        "model_type": "DEFAULT",
+                        "name": "Name",
+                        "position": 0,
+                        "prompt": "Name",
+                        "prompt_schema": null,
+                        "prompt_type": "basic"
+                    },
+                    {
+                        "data_type": "TEXT",
+                        "description": "the driver license number is a unique alphanumeric identifier assigned to each license holder. Extract as it is from the document and if it starts with strings like \\\"DL\\\" or \\\"No\\.\" remove them. The data will always on the top of the document.",
+                        "field_id": "479259",
+                        "lines": [],
+                        "model_type": "DEFAULT",
+                        "name": "Driver License Number",
+                        "position": 1,
+                        "prompt": "Driver License Number",
+                        "prompt_schema": null,
+                        "prompt_type": "basic"
+                    },
+                    {
+                        "data_type": "TEXT",
+                        "description": "extract the complete data of address from the document and if address is in multiple lines combine them to single line separated by space. If there are multiple lines, take whole data including the numbers. It should not contain the name of the person.",
+                        "field_id": "479260",
+                        "lines": [],
+                        "model_type": "DEFAULT",
+                        "name": "Address",
+                        "position": 2,
+                        "prompt": "Address",
+                        "prompt_schema": null,
+                        "prompt_type": "basic"
+                    },
+                    {
+                        "data_type": "TEXT",
+                        "description": "return in the format MM/DD/YYYY",
+                        "field_id": "479261",
+                        "lines": [],
+                        "model_type": "DEFAULT",
+                        "name": "Expire Date",
+                        "position": 4,
+                        "prompt": "Expire Date",
+                        "prompt_schema": null,
+                        "prompt_type": "basic"
+                    },
+                    {
+                        "data_type": "TEXT",
+                        "description": "date return in the format MM/DD/YYYY",
+                        "field_id": "479262",
+                        "lines": [],
+                        "model_type": "DEFAULT",
+                        "name": "Issue Date",
+                        "position": 5,
+                        "prompt": "Issue Date",
+                        "prompt_schema": null,
+                        "prompt_type": "basic"
+                    },
+                    {
+                        "data_type": "TEXT",
+                        "description": "return the full name of state",
+                        "field_id": "479263",
+                        "lines": [],
+                        "model_type": "DEFAULT",
+                        "name": "State",
+                        "position": 7,
+                        "prompt": "State",
+                        "prompt_schema": null,
+                        "prompt_type": "basic"
+                    }
+                ]
+            },
+            "Meal Receipt": {
+                "class_id": "156389",
+                "description": "",
+                "fields": [
+                    {
+                        "data_type": "OBJECT_LIST",
+                        "description": "Item details",
+                        "field_id": "479237",
+                        "lines": [],
+                        "model_type": "DEFAULT",
+                        "name": "total amount",
+                        "position": 2,
+                        "prompt": "total amount",
+                        "prompt_schema": [
+                            {
+                                "description": "",
+                                "name": "Description"
+                            },
+                            {
+                                "description": "",
+                                "name": "Quantity"
+                            },
+                            {
+                                "description": "",
+                                "name": "Line Total"
+                            }
+                        ],
+                        "prompt_type": "basic"
+                    },
+                    {
+                        "data_type": "OBJECT_LIST",
+                        "description": "Item details",
+                        "field_id": "479239",
+                        "lines": [
+                            {
+                                "function_args": [
+                                    {
+                                        "data_type": "LINE",
+                                        "name": "previous_line",
+                                        "value": "Receipt Item Details@0"
+                                    }
+                                ],
+                                "function_id": 7303,
+                                "line_type": "UDF",
+                                "native_fn_name": null,
+                                "prompt": null
+                            }
+                        ],
+                        "model_type": "DEFAULT",
+                        "name": "Receipt Item Details",
+                        "position": 0,
+                        "prompt": "Receipt Item Details",
+                        "prompt_schema": [
+                            {
+                                "description": "don't include numbers, subtotals, taxes and totals.",
+                                "name": "Description"
+                            },
+                            {
+                                "description": "can't be in fractions",
+                                "name": "Quantity"
+                            },
+                            {
+                                "description": "don't extract any currency",
+                                "name": "Amount"
+                            }
+                        ],
+                        "prompt_type": "basic"
+                    },
+                    {
+                        "data_type": "TEXT",
+                        "description": "Subtotal",
+                        "field_id": "479240",
+                        "lines": [
+                            {
+                                "function_args": [
+                                    {
+                                        "data_type": "TEXT",
+                                        "name": "match__pattern",
+                                        "value": "\"[$]\""
+                                    },
+                                    {
+                                        "data_type": "TEXT",
+                                        "name": "replacement",
+                                        "value": "\"\""
+                                    }
+                                ],
+                                "function_id": null,
+                                "line_type": "NATIVE",
+                                "native_fn_name": "regex_replace",
+                                "prompt": null
+                            }
+                        ],
+                        "model_type": "ADVANCED",
+                        "name": "Subtotal",
+                        "position": 1,
+                        "prompt": "Subtotal",
+                        "prompt_schema": null,
+                        "prompt_type": "basic"
+                    }
+                ]
+            },
+            "Other": {
+                "class_id": "156388",
+                "description": "",
+                "fields": []
+            },
+            "Passport": {
+                "class_id": "156391",
+                "description": "",
+                "fields": [
+                    {
+                        "data_type": "TEXT",
+                        "description": "string return date of birth in mm/dd/yyyy format",
+                        "field_id": "479247",
+                        "lines": [],
+                        "model_type": "DEFAULT",
+                        "name": "Date Of Birth",
+                        "position": 3,
+                        "prompt": "Date Of Birth",
+                        "prompt_schema": null,
+                        "prompt_type": "basic"
+                    },
+                    {
+                        "data_type": "TEXT",
+                        "description": "given under the column of \"gender\" or \"sex\" and options are \"M\" or \"F\"",
+                        "field_id": "479248",
+                        "lines": [],
+                        "model_type": "DEFAULT",
+                        "name": "Gender",
+                        "position": 4,
+                        "prompt": "Gender",
+                        "prompt_schema": null,
+                        "prompt_type": "basic"
+                    },
+                    {
+                        "data_type": "TEXT",
+                        "description": "The data under the column \"Passport Number\". The data will be always include alphabet and numbers. It will never be more than 9 characters and will never include special character.",
+                        "field_id": "479249",
+                        "lines": [],
+                        "model_type": "DEFAULT",
+                        "name": "Passport Number",
+                        "position": 0,
+                        "prompt": "Passport Number",
+                        "prompt_schema": null,
+                        "prompt_type": "basic"
+                    },
+                    {
+                        "data_type": "TEXT",
+                        "description": "Passport type of the passport and return P if nothing is mentioned, usually mentioned under \"type\".",
+                        "field_id": "479250",
+                        "lines": [],
+                        "model_type": "DEFAULT",
+                        "name": "Passport Type",
+                        "position": 1,
+                        "prompt": "Passport Type",
+                        "prompt_schema": null,
+                        "prompt_type": "basic"
+                    },
+                    {
+                        "data_type": "TEXT",
+                        "description": "Return the \"first name\" or \"given names\" of the person for whom the passport is issued. Include \"middle name\" from middle name column if exists, it is mentioned below given name. Given name may or may not include two or more names. If it is in a single line the \"last\" word is the surname or mentioned below it.",
+                        "field_id": "479251",
+                        "lines": [],
+                        "model_type": "DEFAULT",
+                        "name": "Given Name",
+                        "position": 2,
+                        "prompt": "Given Name",
+                        "prompt_schema": null,
+                        "prompt_type": "basic"
+                    },
+                    {
+                        "data_type": "TEXT",
+                        "description": "return the nationality of person whose passport this is. the data under the column \"Nationality\". the data column will after \"name\"",
+                        "field_id": "479253",
+                        "lines": [],
+                        "model_type": "DEFAULT",
+                        "name": "Nationality",
+                        "position": 5,
+                        "prompt": "Nationality",
+                        "prompt_schema": null,
+                        "prompt_type": "basic"
+                    },
+                    {
+                        "data_type": "TEXT",
+                        "description": "string return the country that issued the passport. The data is against the column \"country code\". The data will have 3 english alphabet only.",
+                        "field_id": "479254",
+                        "lines": [],
+                        "model_type": "DEFAULT",
+                        "name": "Issuing Country",
+                        "position": 6,
+                        "prompt": "Issuing Country",
+                        "prompt_schema": null,
+                        "prompt_type": "basic"
+                    },
+                    {
+                        "data_type": "TEXT",
+                        "description": "The data of the machine-readable zone consists of two rows of 44 characters each. The only characters used are A\u2013Z, 0\u20139 and the filler character <. The data will always be at the end of the passport. this data contains 88 character. don't remove any special character",
+                        "field_id": "479255",
+                        "lines": [],
+                        "model_type": "DEFAULT",
+                        "name": "MRZ",
+                        "position": 7,
+                        "prompt": "MRZ",
+                        "prompt_schema": null,
+                        "prompt_type": "basic"
+                    }
+                ]
+            }
+        }
+    },
+    "project_udfs": {
+        "7303": {
+            "args": [
+                {
+                    "data_type": "LINE",
+                    "name": "previous_line",
+                    "value": "Receipt Item Details@0"
+                }
+            ],
+            "code": "\n\ndef reorder_columns(previous_line, context = {}, keys = {}, **kwargs):\n\timport json\n\tdata = json.loads(previous_line)\n\tkey_order = [\"Description\",\"Quantity\",\"Amount\"]\n\tfor record in data:\n\t    reordered_record = {\n\t        key: \"N/A\" if not record.get(key) or record.get(key) == \"null\" else record[key]\n\t        for key in key_order\n\t    }\n\t    for key in record.keys():\n\t        if key not in reordered_record:\n\t            reordered_record[key] = \"N/A\" if record[key] is None or record[key] == \"null\" else record[key]\n\t    record.clear()\n\t    record.update(reordered_record)\n\toutput = json.dumps(data, indent=4)\n\treturn output",
+            "docstring": null,
+            "function_code": "\timport json\n\tdata = json.loads(previous_line)\n\tkey_order = [\"Description\",\"Quantity\",\"Amount\"]\n\tfor record in data:\n\t    reordered_record = {\n\t        key: \"N/A\" if not record.get(key) or record.get(key) == \"null\" else record[key]\n\t        for key in key_order\n\t    }\n\t    for key in record.keys():\n\t        if key not in reordered_record:\n\t            reordered_record[key] = \"N/A\" if record[key] is None or record[key] == \"null\" else record[key]\n\t    record.clear()\n\t    record.update(reordered_record)\n\toutput = json.dumps(data, indent=4)\n\treturn output",
+            "id": 7303,
+            "lambda_udf_id": "v1:AWS_LAMBDA:1907257645:insaprd-use2-aihub-prd-docker-default-udf:10",
+            "most_recent_results_path": "ib-internal/CICD/fs/Instabase Drive/aihub/019570c3-0acf-7efa-8450-61572e076c04/project/modules/scripts/REFINER/7e58584f-f4a5-4a22-acb5-f814db0a048b_output.json",
+            "name": "reorder_columns",
+            "project_uuid": "019570c3-0acf-7efa-8450-61572e076c04",
+            "return_type": "string",
+            "scripts_full_path": "ib-internal/CICD/fs/Instabase Drive/aihub/019570c3-0acf-7efa-8450-61572e076c04/project/modules/scripts/REFINER/7e58584f-f4a5-4a22-acb5-f814db0a048b.json",
+            "type": "REFINER"
+        },
+        "7304": {
+            "args": [
+                {
+                    "data_type": "FIELD",
+                    "name": "Receipt_Item_Details",
+                    "value": "Receipt Item Details"
+                },
+                {
+                    "data_type": "FIELD",
+                    "name": "Subtotal",
+                    "value": "Subtotal"
+                }
+            ],
+            "code": "\n\ndef Check_subtotal(Receipt_Item_Details, Subtotal, context = {}, keys = {}, **kwargs):\n\timport json\n\tReceipt_Item_Details = (json.loads(Receipt_Item_Details))\n\tSubtotal = float(Subtotal)\n\tcalculated_subtotal = sum(float(item[\"Amount\"]) for item in Receipt_Item_Details)\n\tif calculated_subtotal== Subtotal:\n\t\treturn None\n\telse:\n\t\treturn \"Subtotal is not equal to the total of the Receipt Item Details\"\n\t",
+            "docstring": null,
+            "function_code": "\timport json\n\tReceipt_Item_Details = (json.loads(Receipt_Item_Details))\n\tSubtotal = float(Subtotal)\n\tcalculated_subtotal = sum(float(item[\"Amount\"]) for item in Receipt_Item_Details)\n\tif calculated_subtotal== Subtotal:\n\t\treturn None\n\telse:\n\t\treturn \"Subtotal is not equal to the total of the Receipt Item Details\"\n\t",
+            "id": 7304,
+            "lambda_udf_id": "v1:AWS_LAMBDA:6699268957:insaprd-use2-aihub-prd-docker-default-udf:10",
+            "most_recent_results_path": "ib-internal/CICD/fs/Instabase Drive/aihub/019570c3-0acf-7efa-8450-61572e076c04/project/modules/scripts/VALIDATIONS/462f19f1-5fbb-4d2a-a496-7ba81f09661b_output.json",
+            "name": "Check_subtotal",
+            "project_uuid": "019570c3-0acf-7efa-8450-61572e076c04",
+            "return_type": "string",
+            "scripts_full_path": "ib-internal/CICD/fs/Instabase Drive/aihub/019570c3-0acf-7efa-8450-61572e076c04/project/modules/scripts/VALIDATIONS/462f19f1-5fbb-4d2a-a496-7ba81f09661b.json",
+            "type": "VALIDATIONS"
+        },
+        "7305": {
+            "args": [
+                {
+                    "data_type": "FIELD",
+                    "name": "Bank_Name",
+                    "value": "Bank Name"
+                }
+            ],
+            "code": "\n\ndef unnamed_custom_function(Bank_Name, context = {}, keys = {}, **kwargs):\n\t# Import Python packages\n\t# import json\n\t\n\t# Log statements using print()\n\t# print(\"This will appear in the logs\")\n\t\n\tif Bank_Name:\n\t\t# Return None to indicate validation passed\n\t\treturn None\n\telse:\n\t\t# Return a string to indicate validation failed\n\t\treturn \"Error: Bank_Name is empty\"",
+            "docstring": null,
+            "function_code": "\t# Import Python packages\n\t# import json\n\t\n\t# Log statements using print()\n\t# print(\"This will appear in the logs\")\n\t\n\tif Bank_Name:\n\t\t# Return None to indicate validation passed\n\t\treturn None\n\telse:\n\t\t# Return a string to indicate validation failed\n\t\treturn \"Error: Bank_Name is empty\"",
+            "id": 7305,
+            "lambda_udf_id": "v1:AWS_LAMBDA:2829272612:insaprd-use2-aihub-prd-docker-default-udf:10",
+            "most_recent_results_path": "ib-internal/CICD/fs/Instabase Drive/aihub/019570c3-0acf-7efa-8450-61572e076c04/project/modules/scripts/VALIDATIONS/1ccf262c-36a0-4036-be0e-088e54f40115_output.json",
+            "name": "unnamed_custom_function",
+            "project_uuid": "019570c3-0acf-7efa-8450-61572e076c04",
+            "return_type": "string",
+            "scripts_full_path": "ib-internal/CICD/fs/Instabase Drive/aihub/019570c3-0acf-7efa-8450-61572e076c04/project/modules/scripts/VALIDATIONS/1ccf262c-36a0-4036-be0e-088e54f40115.json",
+            "type": "VALIDATIONS"
+        },
+        "7306": {
+            "args": [
+                {
+                    "data_type": "FIELD",
+                    "name": "Bank_Name",
+                    "value": "Bank Name"
+                }
+            ],
+            "code": "\n\ndef validate_bank_name(Bank_Name, context = {}, keys = {}, **kwargs):\n    if len(Bank_Name) >= 20:\n        return \"Error: 'Bank Name' should be less than 20 letters.\"\n    return None",
+            "docstring": null,
+            "function_code": "    if len(Bank_Name) >= 20:\n        return \"Error: 'Bank Name' should be less than 20 letters.\"\n    return None",
+            "id": 7306,
+            "lambda_udf_id": "v1:AWS_LAMBDA:1936695658:insaprd-use2-aihub-prd-docker-default-udf:10",
+            "most_recent_results_path": "ib-internal/CICD/fs/Instabase Drive/aihub/019570c3-0acf-7efa-8450-61572e076c04/project/modules/scripts/VALIDATIONS/4567a5ff-08c9-4754-82ef-8a5c11cb4390_output.json",
+            "name": "validate_bank_name",
+            "project_uuid": "019570c3-0acf-7efa-8450-61572e076c04",
+            "return_type": "string",
+            "scripts_full_path": "ib-internal/CICD/fs/Instabase Drive/aihub/019570c3-0acf-7efa-8450-61572e076c04/project/modules/scripts/VALIDATIONS/4567a5ff-08c9-4754-82ef-8a5c11cb4390.json",
+            "type": "VALIDATIONS"
+        }
+    },
+    "project_validations": [
+        {
+            "affected_fields": [
+                479245
+            ],
+            "alert_level": "FAILURE",
+            "created_at": 1741353594000,
+            "description": "Confidence validation rule for Bank Name",
+            "id": 7637,
+            "input_fields": [
+                479245
+            ],
+            "name": "Rule 2",
+            "params": {
+                "confidence_threshold": 0.95
+            },
+            "scope": "FIELD",
+            "type": "CONFIDENCE",
+            "updated_at": 1741353594000
+        },
+        {
+            "affected_fields": [
+                479242
+            ],
+            "alert_level": "FAILURE",
+            "created_at": 1741353594000,
+            "description": "Confidence validation rule for Statement End Date",
+            "id": 7638,
+            "input_fields": [
+                479242
+            ],
+            "name": "Rule 3",
+            "params": {
+                "confidence_threshold": 0.95
+            },
+            "scope": "FIELD",
+            "type": "CONFIDENCE",
+            "updated_at": 1741353594000
+        },
+        {
+            "affected_fields": [
+                479243
+            ],
+            "alert_level": "FAILURE",
+            "created_at": 1741353594000,
+            "description": "Confidence validation rule for Transactions",
+            "id": 7639,
+            "input_fields": [
+                479243
+            ],
+            "name": "Rule 4",
+            "params": {
+                "confidence_threshold": 0.95
+            },
+            "scope": "FIELD",
+            "type": "CONFIDENCE",
+            "updated_at": 1741353594000
+        },
+        {
+            "affected_fields": [
+                479239
+            ],
+            "alert_level": "FAILURE",
+            "created_at": 1741353595000,
+            "description": "",
+            "id": 7640,
+            "input_fields": [
+                479239,
+                479240
+            ],
+            "name": "Rule 5",
+            "params": {
+                "udf_id": 7304
+            },
+            "scope": "FIELD",
+            "type": "UDF",
+            "updated_at": 1741353595000
+        },
+        {
+            "affected_fields": [
+                479244
+            ],
+            "alert_level": "FAILURE",
+            "created_at": 1741353595000,
+            "description": "Confidence validation rule for Statement Country",
+            "id": 7641,
+            "input_fields": [
+                479244
+            ],
+            "name": "Rule 6",
+            "params": {
+                "confidence_threshold": 0.95
+            },
+            "scope": "FIELD",
+            "type": "CONFIDENCE",
+            "updated_at": 1741353595000
+        },
+        {
+            "affected_fields": [
+                479245
+            ],
+            "alert_level": "FAILURE",
+            "created_at": 1741353595000,
+            "description": "",
+            "id": 7642,
+            "input_fields": [
+                479245
+            ],
+            "name": "Rule 7",
+            "params": {
+                "udf_id": 7305
+            },
+            "scope": "FIELD",
+            "type": "UDF",
+            "updated_at": 1741353595000
+        },
+        {
+            "affected_fields": [
+                479245
+            ],
+            "alert_level": "FAILURE",
+            "created_at": 1741353596000,
+            "description": "Validation prompt",
+            "id": 7643,
+            "input_fields": [
+                479245
+            ],
+            "name": "Rule 8",
+            "params": {
+                "udf_id": 7306
+            },
+            "scope": "FIELD",
+            "type": "UDF",
+            "updated_at": 1741353596000
+        }
+    ],
+    "reader_profile": {
+        "createdBy": "",
+        "createdOn": 1738154689199,
+        "defaultProfile": "",
+        "foundationVersion": "",
+        "inputPath": null,
+        "lastModifiedBy": "",
+        "lastModifiedOn": 1738154689199,
+        "outputPath": null,
+        "profiles": [
+            {
+                "entitySettings": [],
+                "name": "aihub",
+                "readSettings": {
+                    "add_barcode_identifier": true,
+                    "cache_pdf_results": false,
+                    "correct_inversion": false,
+                    "correct_orientation": false,
+                    "correct_resolution": false,
+                    "correct_resolution_auto": false,
+                    "detect_barcodes": false,
+                    "detect_blurry_files": false,
+                    "dewarp_page": true,
+                    "document_mapping": "document_is_record_skip_empty_page",
+                    "enable_ibdoc_v2": true,
+                    "enable_paragraph_ordering": false,
+                    "enable_table_markdown_enrichment": false,
+                    "encryption_config": null,
+                    "entity_models": [
+                        {
+                            "model_name": "signature_model",
+                            "model_version": "0.0.4"
+                        },
+                        {
+                            "model_name": "barcode_qrcode_detection",
+                            "model_version": "1.0.0"
+                        }
+                    ],
+                    "extract_all_pdf_layers": false,
+                    "find_lines": false,
+                    "fonts": null,
+                    "force_image_ocr": true,
+                    "image_filters": null,
+                    "languages": [
+                        "en"
+                    ],
+                    "layout_algorithm": "layout_algo_spatial",
+                    "model_specific_settings": {
+                        "marx_v1": {
+                            "version": "layout_v3"
+                        }
+                    },
+                    "native_excel_processing": true,
+                    "ocr_page_type": "marx",
+                    "ocr_timeout": null,
+                    "output_format_layout": "layout_per_page",
+                    "output_formats": null,
+                    "page_range_str": "",
+                    "preprocess_excel_files": false,
+                    "process_type": "auto_to_txt",
+                    "produce_metadata_list": true,
+                    "produce_word_metadata": true,
+                    "remove_boxes": false,
+                    "remove_boxes_over_height_percent": null,
+                    "remove_boxes_over_width_percent": null,
+                    "remove_space_wordpolys": true,
+                    "remove_vertical_text": false,
+                    "reorient_words": false,
+                    "repair_pdfs": false,
+                    "scripts_dir": "",
+                    "write_converted_image": true,
+                    "write_thumbnail": true
+                }
+            }
+        ],
+        "schema": "1"
+    }
+}

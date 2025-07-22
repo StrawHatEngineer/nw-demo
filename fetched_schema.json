@@ -1,0 +1,451 @@
+{
+    "156388": {
+        "description": "",
+        "fields": {},
+        "name": "Other"
+    },
+    "156389": {
+        "description": "",
+        "fields": {
+            "479237": {
+                "data_type": "OBJECT_LIST",
+                "description": "Item details",
+                "lines": [],
+                "model_type": "DEFAULT",
+                "name": "total amount",
+                "position": 2,
+                "prompt": "total amount",
+                "prompt_schema": [
+                    {
+                        "description": "",
+                        "name": "Description"
+                    },
+                    {
+                        "description": "",
+                        "name": "Quantity"
+                    },
+                    {
+                        "description": "",
+                        "name": "Line Total"
+                    }
+                ],
+                "prompt_type": "basic"
+            },
+            "479239": {
+                "data_type": "OBJECT_LIST",
+                "description": "Item details",
+                "lines": [
+                    {
+                        "function_args": [
+                            {
+                                "data_type": "LINE",
+                                "name": "previous_line",
+                                "value": "Receipt Item Details@0"
+                            }
+                        ],
+                        "function_id": 7303,
+                        "line_type": "UDF",
+                        "native_fn_name": null,
+                        "prompt": null
+                    }
+                ],
+                "model_type": "DEFAULT",
+                "name": "Receipt Item Details",
+                "position": 0,
+                "prompt": "Receipt Item Details",
+                "prompt_schema": [
+                    {
+                        "description": "don't include numbers, subtotals, taxes and totals.",
+                        "name": "Description"
+                    },
+                    {
+                        "description": "can't be in fractions",
+                        "name": "Quantity"
+                    },
+                    {
+                        "description": "don't extract any currency",
+                        "name": "Amount"
+                    }
+                ],
+                "prompt_type": "basic"
+            },
+            "479240": {
+                "data_type": "TEXT",
+                "description": "Subtotal",
+                "lines": [
+                    {
+                        "function_args": [
+                            {
+                                "data_type": "TEXT",
+                                "name": "match__pattern",
+                                "value": "\"[$]\""
+                            },
+                            {
+                                "data_type": "TEXT",
+                                "name": "replacement",
+                                "value": "\"\""
+                            }
+                        ],
+                        "function_id": null,
+                        "line_type": "NATIVE",
+                        "native_fn_name": "regex_replace",
+                        "prompt": null
+                    }
+                ],
+                "model_type": "ADVANCED",
+                "name": "Subtotal",
+                "position": 1,
+                "prompt": "Subtotal",
+                "prompt_schema": null,
+                "prompt_type": "basic"
+            }
+        },
+        "name": "Meal Receipt"
+    },
+    "156390": {
+        "description": "",
+        "fields": {
+            "479241": {
+                "data_type": "TEXT",
+                "description": null,
+                "lines": [
+                    {
+                        "function_args": [
+                            {
+                                "data_type": "TEXT",
+                                "name": "input__format",
+                                "value": "\"\""
+                            },
+                            {
+                                "data_type": "TEXT",
+                                "name": "output__format",
+                                "value": "\"yyyymmdd\""
+                            }
+                        ],
+                        "function_id": null,
+                        "line_type": "NATIVE",
+                        "native_fn_name": "format_date",
+                        "prompt": null
+                    }
+                ],
+                "model_type": "DEFAULT",
+                "name": "Statement Start Date",
+                "position": 1,
+                "prompt": "Statement Start Date",
+                "prompt_schema": null,
+                "prompt_type": "basic"
+            },
+            "479242": {
+                "data_type": "TEXT",
+                "description": null,
+                "lines": [
+                    {
+                        "function_args": [
+                            {
+                                "data_type": "TEXT",
+                                "name": "input__format",
+                                "value": "\"\""
+                            },
+                            {
+                                "data_type": "TEXT",
+                                "name": "output__format",
+                                "value": "\"yyyymmdd\""
+                            }
+                        ],
+                        "function_id": null,
+                        "line_type": "NATIVE",
+                        "native_fn_name": "format_date",
+                        "prompt": null
+                    }
+                ],
+                "model_type": "DEFAULT",
+                "name": "Statement End Date",
+                "position": 2,
+                "prompt": "Statement End Date",
+                "prompt_schema": null,
+                "prompt_type": "basic"
+            },
+            "479243": {
+                "data_type": "TABLE",
+                "description": "Transactions list.",
+                "lines": [
+                    {
+                        "function_args": [],
+                        "function_id": null,
+                        "line_type": "PROMPT",
+                        "native_fn_name": null,
+                        "prompt": "Remove currency and negative signs. Date format \"MM/DD/YYYY\""
+                    }
+                ],
+                "model_type": "DEFAULT",
+                "name": "Transactions",
+                "position": 3,
+                "prompt": "Transactions list",
+                "prompt_schema": null,
+                "prompt_type": "basic"
+            },
+            "479244": {
+                "data_type": "TEXT",
+                "description": "What country issued was the statement issued from?",
+                "lines": [
+                    {
+                        "function_args": [],
+                        "function_id": null,
+                        "line_type": "PROMPT",
+                        "native_fn_name": null,
+                        "prompt": "Return the country name as a 3 character ISO code only"
+                    }
+                ],
+                "model_type": "DEFAULT",
+                "name": "Statement Country",
+                "position": 5,
+                "prompt": "What country issued was the statement issued from?",
+                "prompt_schema": null,
+                "prompt_type": "advanced"
+            },
+            "479245": {
+                "data_type": "TEXT",
+                "description": "Bank Name",
+                "lines": [],
+                "model_type": "DEFAULT",
+                "name": "Bank Name",
+                "position": 0,
+                "prompt": "Bank Name",
+                "prompt_schema": null,
+                "prompt_type": "basic"
+            },
+            "479246": {
+                "data_type": "TEXT",
+                "description": "",
+                "lines": [
+                    {
+                        "function_args": [
+                            {
+                                "data_type": "FIELD",
+                                "name": "Statement_Start_Date",
+                                "value": "Statement Start Date"
+                            },
+                            {
+                                "data_type": "FIELD",
+                                "name": "Statement_End_Date",
+                                "value": "Statement End Date"
+                            }
+                        ],
+                        "function_id": null,
+                        "line_type": "PROMPT",
+                        "native_fn_name": null,
+                        "prompt": "\\ Statement End Date \\ to \\ Statement Start Date \\ - in month"
+                    }
+                ],
+                "model_type": "DEFAULT",
+                "name": "Duration",
+                "position": 4,
+                "prompt": "",
+                "prompt_schema": null,
+                "prompt_type": "derived"
+            },
+            "646157": {
+                "data_type": "TEXT",
+                "description": "transaction",
+                "lines": [],
+                "model_type": "DEFAULT",
+                "name": "transaction",
+                "position": 6,
+                "prompt": "transaction",
+                "prompt_schema": null,
+                "prompt_type": "basic"
+            }
+        },
+        "name": "Bank Statement"
+    },
+    "156391": {
+        "description": "",
+        "fields": {
+            "479247": {
+                "data_type": "TEXT",
+                "description": "string return date of birth in mm/dd/yyyy format",
+                "lines": [],
+                "model_type": "DEFAULT",
+                "name": "Date Of Birth",
+                "position": 3,
+                "prompt": "Date Of Birth",
+                "prompt_schema": null,
+                "prompt_type": "basic"
+            },
+            "479248": {
+                "data_type": "TEXT",
+                "description": "given under the column of \"gender\" or \"sex\" and options are \"M\" or \"F\"",
+                "lines": [],
+                "model_type": "DEFAULT",
+                "name": "Gender",
+                "position": 4,
+                "prompt": "Gender",
+                "prompt_schema": null,
+                "prompt_type": "basic"
+            },
+            "479249": {
+                "data_type": "TEXT",
+                "description": "The data under the column \"Passport Number\". The data will be always include alphabet and numbers. It will never be more than 9 characters and will never include special character.",
+                "lines": [],
+                "model_type": "DEFAULT",
+                "name": "Passport Number",
+                "position": 0,
+                "prompt": "Passport Number",
+                "prompt_schema": null,
+                "prompt_type": "basic"
+            },
+            "479250": {
+                "data_type": "TEXT",
+                "description": "Passport type of the passport and return P if nothing is mentioned, usually mentioned under \"type\".",
+                "lines": [],
+                "model_type": "DEFAULT",
+                "name": "Passport Type",
+                "position": 1,
+                "prompt": "Passport Type",
+                "prompt_schema": null,
+                "prompt_type": "basic"
+            },
+            "479251": {
+                "data_type": "TEXT",
+                "description": "Return the \"first name\" or \"given names\" of the person for whom the passport is issued. Include \"middle name\" from middle name column if exists, it is mentioned below given name. Given name may or may not include two or more names. If it is in a single line the \"last\" word is the surname or mentioned below it.",
+                "lines": [],
+                "model_type": "DEFAULT",
+                "name": "Given Name",
+                "position": 2,
+                "prompt": "Given Name",
+                "prompt_schema": null,
+                "prompt_type": "basic"
+            },
+            "479253": {
+                "data_type": "TEXT",
+                "description": "return the nationality of person whose passport this is. the data under the column \"Nationality\". the data column will after \"name\"",
+                "lines": [],
+                "model_type": "DEFAULT",
+                "name": "Nationality",
+                "position": 5,
+                "prompt": "Nationality",
+                "prompt_schema": null,
+                "prompt_type": "basic"
+            },
+            "479254": {
+                "data_type": "TEXT",
+                "description": "string return the country that issued the passport. The data is against the column \"country code\". The data will have 3 english alphabet only.",
+                "lines": [],
+                "model_type": "DEFAULT",
+                "name": "Issuing Country",
+                "position": 6,
+                "prompt": "Issuing Country",
+                "prompt_schema": null,
+                "prompt_type": "basic"
+            },
+            "479255": {
+                "data_type": "TEXT",
+                "description": "The data of the machine-readable zone consists of two rows of 44 characters each. The only characters used are A\u2013Z, 0\u20139 and the filler character <. The data will always be at the end of the passport. this data contains 88 character. don't remove any special character",
+                "lines": [],
+                "model_type": "DEFAULT",
+                "name": "MRZ",
+                "position": 7,
+                "prompt": "MRZ",
+                "prompt_schema": null,
+                "prompt_type": "basic"
+            }
+        },
+        "name": "Passport"
+    },
+    "156392": {
+        "description": "",
+        "fields": {
+            "479256": {
+                "data_type": "TEXT",
+                "description": "return in the format MM/DD/YYYY and it generally comes after \\\"DOB\\\" or \\\"Date of Birth\\\"",
+                "lines": [],
+                "model_type": "DEFAULT",
+                "name": "Date Of Birth",
+                "position": 3,
+                "prompt": "Date Of Birth",
+                "prompt_schema": null,
+                "prompt_type": "basic"
+            },
+            "479257": {
+                "data_type": "TEXT",
+                "description": "return either as M or F",
+                "lines": [],
+                "model_type": "DEFAULT",
+                "name": "Gender",
+                "position": 6,
+                "prompt": "Gender",
+                "prompt_schema": null,
+                "prompt_type": "basic"
+            },
+            "479258": {
+                "data_type": "TEXT",
+                "description": "Return the driver full name (First name, middle name if any then last name) on whom license was issued.",
+                "lines": [],
+                "model_type": "DEFAULT",
+                "name": "Name",
+                "position": 0,
+                "prompt": "Name",
+                "prompt_schema": null,
+                "prompt_type": "basic"
+            },
+            "479259": {
+                "data_type": "TEXT",
+                "description": "the driver license number is a unique alphanumeric identifier assigned to each license holder. Extract as it is from the document and if it starts with strings like \\\"DL\\\" or \\\"No\\.\" remove them. The data will always on the top of the document.",
+                "lines": [],
+                "model_type": "DEFAULT",
+                "name": "Driver License Number",
+                "position": 1,
+                "prompt": "Driver License Number",
+                "prompt_schema": null,
+                "prompt_type": "basic"
+            },
+            "479260": {
+                "data_type": "TEXT",
+                "description": "extract the complete data of address from the document and if address is in multiple lines combine them to single line separated by space. If there are multiple lines, take whole data including the numbers. It should not contain the name of the person.",
+                "lines": [],
+                "model_type": "DEFAULT",
+                "name": "Address",
+                "position": 2,
+                "prompt": "Address",
+                "prompt_schema": null,
+                "prompt_type": "basic"
+            },
+            "479261": {
+                "data_type": "TEXT",
+                "description": "return in the format MM/DD/YYYY",
+                "lines": [],
+                "model_type": "DEFAULT",
+                "name": "Expire Date",
+                "position": 4,
+                "prompt": "Expire Date",
+                "prompt_schema": null,
+                "prompt_type": "basic"
+            },
+            "479262": {
+                "data_type": "TEXT",
+                "description": "date return in the format MM/DD/YYYY",
+                "lines": [],
+                "model_type": "DEFAULT",
+                "name": "Issue Date",
+                "position": 5,
+                "prompt": "Issue Date",
+                "prompt_schema": null,
+                "prompt_type": "basic"
+            },
+            "479263": {
+                "data_type": "TEXT",
+                "description": "return the full name of state",
+                "lines": [],
+                "model_type": "DEFAULT",
+                "name": "State",
+                "position": 7,
+                "prompt": "State",
+                "prompt_schema": null,
+                "prompt_type": "basic"
+            }
+        },
+        "name": "Driver License"
+    },
+    "last_edited_at": "1750399042000",
+    "last_edited_class_at": "1741353588000"
+}

@@ -1,0 +1,25 @@
+{
+    "appReleaseVersion": "",
+    "author": "vinay.thapa_instabase.com",
+    "contextAccount": "ib-internal",
+    "createdAtMs": "1742318264000",
+    "description": "No release notes",
+    "id": "b6cf94d3-d446-429b-a756-92733966de6a",
+    "isCustomizable": false,
+    "linkSharingMode": "OFF",
+    "metadata": "{\"authors\": [\"vinay.thapa_instabase.com\"], \"icon\": \"icon.png\", \"samples\": \"\", \"results\": \"\", \"schema\": \"schema.json\", \"project_id\": \"019570c3-0acf-7efa-8450-61572e076c04\", \"billing_model\": \"default\", \"has_project_snapshot\": true, \"org_context_type\": \"ENTERPRISE\", \"is_copy_of_existing_app\": false}",
+    "name": "CICD Build App",
+    "owner": "vinay.thapa_instabase.com",
+    "ownerFullName": "Vinay  Thapa",
+    "sharedAccounts": [
+        "ib-internal"
+    ],
+    "solutionType": "EXTRACTION",
+    "solution_path": "system/global/fs/Instabase Drive/Applications/Deployed/All/b6cf94d3-d446-429b-a756-92733966de6a",
+    "state": "PRODUCTION",
+    "summary": "No summary",
+    "updateMode": "AUTO_UPDATE",
+    "updatedAtMs": "1750146974000",
+    "version": "0.0.1",
+    "visibility": "PRIVATE"
+}

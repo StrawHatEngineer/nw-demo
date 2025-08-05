@@ -12,8 +12,8 @@
         "dependencies": []
     },
     "target": {
-        "org": "ib-internal",
-        "workspace": "global"
+        "org": "munichre",
+        "workspace": "GSI-ModelLab"
     },
     "settings": {
         "rebuild": true

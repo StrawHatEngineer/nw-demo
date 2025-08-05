@@ -12,8 +12,8 @@
         "dependencies": []
     },
     "target": {
-        "org": "munichre",
-        "workspace": "GSI-ModelLab"
+        "org": "aihub-uat-internal",
+        "workspace": "CICD"
     },
     "settings": {
         "rebuild": true

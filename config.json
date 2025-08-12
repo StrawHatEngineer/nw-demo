@@ -13,7 +13,13 @@
         "org": "ib-internal",
         "project_id": "01952bca-2453-7908-a9e8-31a8cde7a1ff",
         "sb_name": "",
-        "workspace": "CICD"
+        "workspace": "CICD",
+        "app_details": {
+            "name": "DL Test",
+            "version": "0.0.2",
+            "description": "description",
+            "release_notes": "dcfasdf"
+        }
     },
     "target": {
         "org": "ib-internal",

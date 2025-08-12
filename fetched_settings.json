@@ -1,28 +1,28 @@
 {
     "projects": [
         {
-            "active_deployed_solution_id": "b6cf94d3-d446-429b-a756-92733966de6a",
-            "createdAtMs": "1741353585000",
+            "active_deployed_solution_id": "6b96526d-f7e1-418f-915b-592c6030c229",
+            "createdAtMs": "1740196423000",
             "creation_base": "NONE",
-            "data_root": "ib-internal/CICD/fs/Instabase Drive/aihub/019570c3-0acf-7efa-8450-61572e076c04",
-            "desc": "CICD Build App",
-            "extraction_mode": "SPLIT_CLASSIFICATION",
-            "id": "019570c3-0acf-7efa-8450-61572e076c04",
+            "data_root": "ib-internal/CICD/fs/Instabase Drive/aihub/01952bca-2453-7908-a9e8-31a8cde7a1ff",
+            "desc": "New project",
+            "extraction_mode": null,
+            "id": "01952bca-2453-7908-a9e8-31a8cde7a1ff",
             "llm": "gpt-3.5-turbo",
             "matches_default_drive": true,
-            "name": "CICD Build App",
+            "name": "DL Test",
             "needs_migration": false,
             "owner": "67d786be-6a34-4b23-a196-f8174e6ff6ea",
             "ownerPublicId": "vinay.thapa_instabase.com",
-            "project_root": "ib-internal/CICD/fs/Instabase Drive/aihub/019570c3-0acf-7efa-8450-61572e076c04",
+            "project_root": "ib-internal/CICD/fs/Instabase Drive/aihub/01952bca-2453-7908-a9e8-31a8cde7a1ff",
             "reader_profile": {
                 "createdBy": "",
-                "createdOn": 1738154689199,
+                "createdOn": 1740196454528,
                 "defaultProfile": "",
                 "foundationVersion": "",
                 "inputPath": null,
                 "lastModifiedBy": "",
-                "lastModifiedOn": 1738154689199,
+                "lastModifiedOn": 1740196454528,
                 "outputPath": null,
                 "profiles": [
                     {
@@ -102,10 +102,11 @@
                     "languageType": "standard",
                     "nativeExcelProcessing": true,
                     "pagesText": "",
+                    "splitByPage": false,
                     "version": "v1"
                 }
             },
-            "updatedAtMs": "1741353587000",
+            "updatedAtMs": "1744867469000",
             "workspace": "CICD"
         }
     ]

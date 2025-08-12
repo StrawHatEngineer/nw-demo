@@ -22,8 +22,8 @@
         }
     },
     "target": {
-        "org": "global",
+        "org": "ib-internal",
         "project_id": "0198327a-0ef1-7bef-ac48-b2a983ca7968",
-        "workspace": "CICD"
+        "workspace": "global"
     }
 }

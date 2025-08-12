@@ -1,22 +1,29 @@
 {
-    "source": {
-        "is_advanced" : false,
-        "project_id": "019570c3-0acf-7efa-8450-61572e076c04",
-        "flow_path": "",
-        "sb_name": "",
-        "flow_name": "",
-        "org": "ib-internal",
-        "workspace": "CICD",
-        "app_id": "b6cf94d3-d446-429b-a756-92733966de6a",
-        "deployment_id": "0195aa43-73aa-78b7-b980-65464d8527ac",
-        "dependencies": []
-    },
-    "target": {
-        "org": "aihub-uat-internal",
-        "workspace": "CICD"
-    },
+    "release_notes": "v0.0.1",
     "settings": {
         "rebuild": true
     },
-    "release_notes": "v0.0.1"
+    "source": {
+        "app_id": "",
+        "dependencies": [],
+        "deployment_id": "",
+        "flow_name": "",
+        "flow_path": "",
+        "is_advanced": false,
+        "org": "ib-internal",
+        "project_id": "01952bca-2453-7908-a9e8-31a8cde7a1ff",
+        "sb_name": "",
+        "workspace": "CICD",
+        "app_details": {
+            "name": "vinay test",
+            "version": "0.0.4",
+            "description": "description",
+            "release_notes": "removed country field"
+        }
+    },
+    "target": {
+        "org": "global",
+        "project_id": "",
+        "workspace": "CICD"
+    }
 }

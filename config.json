@@ -4,7 +4,7 @@
         "rebuild": true
     },
     "source": {
-        "app_id": "6b96526d-f7e1-418f-915b-592c6030c229",
+        "app_id": "",
         "dependencies": [],
         "deployment_id": "",
         "flow_name": "",
@@ -16,14 +16,14 @@
         "workspace": "CICD",
         "app_details": {
             "name": "vinay test",
-            "version": "0.0.4",
+            "version": "0.0.5",
             "description": "description",
-            "release_notes": "removed country field"
+            "release_notes": "add country field"
         }
     },
     "target": {
-        "org": "global",
+        "org": "ib-internal",
         "project_id": "0198327a-0ef1-7bef-ac48-b2a983ca7968",
-        "workspace": "CICD"
+        "workspace": "global"
     }
 }

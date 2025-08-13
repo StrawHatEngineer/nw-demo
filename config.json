@@ -4,7 +4,7 @@
         "rebuild": true
     },
     "source": {
-        "app_id": "",
+        "app_id": "da221347-1105-4d87-b353-2654671b979b",
         "dependencies": [],
         "deployment_id": "",
         "flow_name": "",
@@ -16,7 +16,7 @@
         "workspace": "CICD",
         "app_details": {
             "name": "DL Test",
-            "version": "0.0.3",
+            "version": "0.0.4",
             "description": "description",
             "release_notes": "dcfasdf"
         }

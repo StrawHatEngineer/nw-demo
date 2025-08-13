@@ -1,0 +1,19 @@
+{
+    "7269": {
+        "args": [
+            {
+                "data_type": "LINE",
+                "name": "previous_line",
+                "value": "Name@0"
+            }
+        ],
+        "code": "\t# Import Python packages\n\t# import json\n\timport logging\n\t\n\t# Log statements using print()\n\t# print(\"This will appear in the logs\")\n\tlogging.info(\"vinay\")\n\t# Return the cleaned output\n\treturn previous_line",
+        "docstring": null,
+        "lambda_end_of_life": null,
+        "lambda_id": "11",
+        "lambda_udf_id": "v1:AWS_LAMBDA:8261397370:insaprd-use2-aihub-prd-docker-default-udf:10",
+        "last_updated_at": "1741328407000",
+        "name": "unnamed_custom_function",
+        "udf_type": "REFINER"
+    }
+}

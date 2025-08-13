@@ -1,0 +1,23 @@
+{
+    "last_updated": 1744867473000,
+    "rules": [
+        {
+            "affected_fields": [],
+            "alert_level": "FAILURE",
+            "created_at": 1744867473000,
+            "description": "Classification validation",
+            "id": 9848,
+            "input_fields": [],
+            "name": "Rule 1",
+            "params": {
+                "affected_classes": [
+                    148882
+                ],
+                "confidence_threshold": 0.95
+            },
+            "scope": "CLASS",
+            "type": "CLASS_CONFIDENCE",
+            "updated_at": 1744867473000
+        }
+    ]
+}

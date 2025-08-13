@@ -1,0 +1,25 @@
+{
+    "appReleaseVersion": "25.26",
+    "author": "vinay.thapa_instabase.com",
+    "contextAccount": "ib-internal",
+    "createdAtMs": "1755055376000",
+    "description": "dcfasdf",
+    "id": "da221347-1105-4d87-b353-2654671b979b",
+    "isCustomizable": false,
+    "linkSharingMode": "OFF",
+    "metadata": "{\"authors\": [\"vinay.thapa_instabase.com\"], \"icon\": \"icon.png\", \"samples\": \"\", \"results\": \"\", \"schema\": \"schema.json\", \"project_id\": \"01952bca-2453-7908-a9e8-31a8cde7a1ff\", \"billing_model\": \"default\", \"has_project_snapshot\": true, \"org_context_type\": \"ENTERPRISE\", \"is_copy_of_existing_app\": false}",
+    "name": "DL Test",
+    "owner": "vinay.thapa_instabase.com",
+    "ownerFullName": "Vinay  Thapa",
+    "sharedAccounts": [
+        "ib-internal"
+    ],
+    "solutionType": "EXTRACTION",
+    "solution_path": "system/global/fs/Instabase Drive/Applications/Deployed/All/da221347-1105-4d87-b353-2654671b979b",
+    "state": "ACTIVE",
+    "summary": "description",
+    "updateMode": "UPDATE_WHEN_EXPIRED",
+    "updatedAtMs": "1755055376000",
+    "version": "0.0.3",
+    "visibility": "PRIVATE"
+}

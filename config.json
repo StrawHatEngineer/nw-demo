@@ -4,7 +4,13 @@
         "rebuild": true
     },
     "source": {
-        "app_id": "",
+        "app_details": {
+            "description": "description",
+            "name": "Wow",
+            "release_notes": "dcfasdf",
+            "version": "0.0.1"
+        },
+        "app_id": "5888e25a-95b6-4f73-8c72-ffa74a069a7a",
         "dependencies": [],
         "deployment_id": "",
         "flow_name": "",
@@ -13,13 +19,7 @@
         "org": "ib-internal",
         "project_id": "0198c7fe-113b-799b-be70-d95b031e6935",
         "sb_name": "",
-        "workspace": "CICD",
-        "app_details": {
-            "name": "Wow",
-            "version": "0.0.1",
-            "description": "description",
-            "release_notes": "dcfasdf"
-        }
+        "workspace": "CICD"
     },
     "target": {
         "org": "ib-internal",

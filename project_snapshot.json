@@ -1,0 +1,217 @@
+{
+    "project_data": {
+        "createdAtMs": "1755701973000",
+        "creationBase": "NONE",
+        "dataMountPath": "ib-internal/vinay.thapa_instabase.com/fs/Instabase Drive/aihub/0198c7fe-113b-799b-be70-d95b031e6935",
+        "description": "New project",
+        "id": "0198c7fe-113b-799b-be70-d95b031e6935",
+        "llm": "gpt-3.5-turbo",
+        "name": "Wow",
+        "owner": "67d786be-6a34-4b23-a196-f8174e6ff6ea",
+        "ownerPublicId": "vinay.thapa_instabase.com",
+        "projectMountPath": "ib-internal/vinay.thapa_instabase.com/fs/Instabase Drive/aihub/0198c7fe-113b-799b-be70-d95b031e6935",
+        "repoId": "c869d2df-ae6f-42e9-b433-6e0595d5ab60",
+        "schemaVersion": "1",
+        "settings": {},
+        "type": "BUILD",
+        "updatedAtMs": "1755701981000",
+        "workspace": "vinay.thapa_instabase.com"
+    },
+    "project_schema": {
+        "case_fields": [],
+        "classes": {
+            "Driver License": {
+                "class_id": "221629",
+                "description": "",
+                "fields": [
+                    {
+                        "data_type": "TEXT",
+                        "description": "Return the driver full name (First name, middle name if any then last name) on whom license was issued.",
+                        "field_id": "715312",
+                        "field_visibility": "VISIBLE",
+                        "lines": [],
+                        "model_type": "DEFAULT",
+                        "name": "Name",
+                        "position": 0,
+                        "prompt": "Name",
+                        "prompt_schema": null,
+                        "prompt_type": "basic"
+                    },
+                    {
+                        "data_type": "TEXT",
+                        "description": "the driver license number is a unique alphanumeric identifier assigned to each license holder. Extract as it is from the document and if it starts with strings like \\\"DL\\\" or \\\"No\\.\" remove them. The data will always on the top of the document.",
+                        "field_id": "715313",
+                        "field_visibility": "VISIBLE",
+                        "lines": [],
+                        "model_type": "DEFAULT",
+                        "name": "Driver License Number",
+                        "position": 1,
+                        "prompt": "Driver License Number",
+                        "prompt_schema": null,
+                        "prompt_type": "basic"
+                    },
+                    {
+                        "data_type": "TEXT",
+                        "description": "extract the complete data of address from the document and if address is in multiple lines combine them to single line separated by space. If there are multiple lines, take whole data including the numbers. It should not contain the name of the person.",
+                        "field_id": "715314",
+                        "field_visibility": "VISIBLE",
+                        "lines": [],
+                        "model_type": "DEFAULT",
+                        "name": "Address",
+                        "position": 2,
+                        "prompt": "Address",
+                        "prompt_schema": null,
+                        "prompt_type": "basic"
+                    },
+                    {
+                        "data_type": "TEXT",
+                        "description": "return in the format MM/DD/YYYY and it generally comes after \\\"DOB\\\" or \\\"Date of Birth\\\"",
+                        "field_id": "715315",
+                        "field_visibility": "VISIBLE",
+                        "lines": [],
+                        "model_type": "DEFAULT",
+                        "name": "Date Of Birth",
+                        "position": 3,
+                        "prompt": "Date Of Birth",
+                        "prompt_schema": null,
+                        "prompt_type": "basic"
+                    },
+                    {
+                        "data_type": "TEXT",
+                        "description": "return in the format MM/DD/YYYY",
+                        "field_id": "715316",
+                        "field_visibility": "VISIBLE",
+                        "lines": [],
+                        "model_type": "DEFAULT",
+                        "name": "Expire Date",
+                        "position": 4,
+                        "prompt": "Expire Date",
+                        "prompt_schema": null,
+                        "prompt_type": "basic"
+                    },
+                    {
+                        "data_type": "TEXT",
+                        "description": "date return in the format MM/DD/YYYY",
+                        "field_id": "715317",
+                        "field_visibility": "VISIBLE",
+                        "lines": [],
+                        "model_type": "DEFAULT",
+                        "name": "Issue Date",
+                        "position": 5,
+                        "prompt": "Issue Date",
+                        "prompt_schema": null,
+                        "prompt_type": "basic"
+                    },
+                    {
+                        "data_type": "TEXT",
+                        "description": "return either as M or F",
+                        "field_id": "715318",
+                        "field_visibility": "VISIBLE",
+                        "lines": [],
+                        "model_type": "DEFAULT",
+                        "name": "Gender",
+                        "position": 6,
+                        "prompt": "Gender",
+                        "prompt_schema": null,
+                        "prompt_type": "basic"
+                    },
+                    {
+                        "data_type": "TEXT",
+                        "description": "return the full name of state",
+                        "field_id": "715319",
+                        "field_visibility": "VISIBLE",
+                        "lines": [],
+                        "model_type": "DEFAULT",
+                        "name": "State",
+                        "position": 7,
+                        "prompt": "State",
+                        "prompt_schema": null,
+                        "prompt_type": "basic"
+                    }
+                ]
+            },
+            "Other": {
+                "class_id": "221627",
+                "description": "",
+                "fields": []
+            }
+        }
+    },
+    "project_udfs": {},
+    "project_validations": [],
+    "reader_profile": {
+        "createdBy": "",
+        "createdOn": 1755701973088,
+        "defaultProfile": "",
+        "foundationVersion": "",
+        "inputPath": null,
+        "lastModifiedBy": "",
+        "lastModifiedOn": 1755701973088,
+        "outputPath": null,
+        "profiles": [
+            {
+                "entitySettings": [],
+                "name": "aihub",
+                "readSettings": {
+                    "add_barcode_identifier": true,
+                    "cache_pdf_results": false,
+                    "correct_inversion": false,
+                    "correct_orientation": false,
+                    "correct_resolution": false,
+                    "correct_resolution_auto": false,
+                    "detect_barcodes": false,
+                    "detect_blurry_files": false,
+                    "dewarp_page": true,
+                    "document_mapping": "document_is_record_skip_empty_page",
+                    "enable_ibdoc_v2": true,
+                    "enable_paragraph_ordering": false,
+                    "enable_table_markdown_enrichment": false,
+                    "encryption_config": null,
+                    "entity_models": [
+                        {
+                            "model_name": "signature_model",
+                            "model_version": "0.0.4"
+                        },
+                        {
+                            "model_name": "barcode_qrcode_detection",
+                            "model_version": "1.0.0"
+                        }
+                    ],
+                    "extract_all_pdf_layers": true,
+                    "find_lines": false,
+                    "fonts": null,
+                    "force_image_ocr": false,
+                    "image_filters": null,
+                    "languages": null,
+                    "layout_algorithm": "layout_algo_spatial",
+                    "model_specific_settings": {
+                        "marx_v1": {
+                            "version": "v3"
+                        }
+                    },
+                    "native_excel_processing": true,
+                    "ocr_page_type": "marx",
+                    "ocr_timeout": null,
+                    "output_format_layout": "layout_per_page",
+                    "output_formats": null,
+                    "page_range_str": "",
+                    "preprocess_excel_files": false,
+                    "process_type": "auto_to_txt",
+                    "produce_metadata_list": true,
+                    "produce_word_metadata": true,
+                    "remove_boxes": false,
+                    "remove_boxes_over_height_percent": null,
+                    "remove_boxes_over_width_percent": null,
+                    "remove_space_wordpolys": true,
+                    "remove_vertical_text": false,
+                    "reorient_words": false,
+                    "repair_pdfs": false,
+                    "scripts_dir": "",
+                    "write_converted_image": true,
+                    "write_thumbnail": true
+                }
+            }
+        ],
+        "schema": "1"
+    }
+}

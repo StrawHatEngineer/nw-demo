@@ -1,0 +1,22 @@
+{
+    "appReleaseVersion": "",
+    "author": "vinay.thapa_instabase.com",
+    "contextAccount": "ib-internal",
+    "createdAtMs": "1756706031000",
+    "description": "dcfasdf",
+    "id": "5888e25a-95b6-4f73-8c72-ffa74a069a7a",
+    "isCustomizable": false,
+    "linkSharingMode": "OFF",
+    "metadata": "{\"authors\": [\"vinay.thapa_instabase.com\"], \"icon\": \"icon.png\", \"samples\": \"\", \"results\": \"\", \"schema\": \"schema.json\", \"project_id\": \"0198c7fe-113b-799b-be70-d95b031e6935\", \"billing_model\": \"default\", \"has_project_snapshot\": true, \"org_context_type\": \"ENTERPRISE\", \"is_copy_of_existing_app\": false}",
+    "name": "Wow",
+    "owner": "vinay.thapa_instabase.com",
+    "ownerFullName": "Vinay  Thapa",
+    "solutionType": "EXTRACTION",
+    "solution_path": "system/global/fs/Instabase Drive/Applications/Deployed/All/5888e25a-95b6-4f73-8c72-ffa74a069a7a",
+    "state": "ACTIVE",
+    "summary": "description",
+    "updateMode": "AUTO_UPDATE",
+    "updatedAtMs": "1756706031000",
+    "version": "0.0.1",
+    "visibility": "PRIVATE"
+}

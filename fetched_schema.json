@@ -1,0 +1,111 @@
+{
+    "221627": {
+        "description": "",
+        "fields": {},
+        "name": "Other"
+    },
+    "221629": {
+        "description": "",
+        "fields": {
+            "715312": {
+                "data_type": "TEXT",
+                "description": "Return the driver full name (First name, middle name if any then last name) on whom license was issued.",
+                "field_visibility": "VISIBLE",
+                "lines": [],
+                "model_type": "DEFAULT",
+                "name": "Name",
+                "position": 0,
+                "prompt": "Name",
+                "prompt_schema": null,
+                "prompt_type": "basic"
+            },
+            "715313": {
+                "data_type": "TEXT",
+                "description": "the driver license number is a unique alphanumeric identifier assigned to each license holder. Extract as it is from the document and if it starts with strings like \\\"DL\\\" or \\\"No\\.\" remove them. The data will always on the top of the document.",
+                "field_visibility": "VISIBLE",
+                "lines": [],
+                "model_type": "DEFAULT",
+                "name": "Driver License Number",
+                "position": 1,
+                "prompt": "Driver License Number",
+                "prompt_schema": null,
+                "prompt_type": "basic"
+            },
+            "715314": {
+                "data_type": "TEXT",
+                "description": "extract the complete data of address from the document and if address is in multiple lines combine them to single line separated by space. If there are multiple lines, take whole data including the numbers. It should not contain the name of the person.",
+                "field_visibility": "VISIBLE",
+                "lines": [],
+                "model_type": "DEFAULT",
+                "name": "Address",
+                "position": 2,
+                "prompt": "Address",
+                "prompt_schema": null,
+                "prompt_type": "basic"
+            },
+            "715315": {
+                "data_type": "TEXT",
+                "description": "return in the format MM/DD/YYYY and it generally comes after \\\"DOB\\\" or \\\"Date of Birth\\\"",
+                "field_visibility": "VISIBLE",
+                "lines": [],
+                "model_type": "DEFAULT",
+                "name": "Date Of Birth",
+                "position": 3,
+                "prompt": "Date Of Birth",
+                "prompt_schema": null,
+                "prompt_type": "basic"
+            },
+            "715316": {
+                "data_type": "TEXT",
+                "description": "return in the format MM/DD/YYYY",
+                "field_visibility": "VISIBLE",
+                "lines": [],
+                "model_type": "DEFAULT",
+                "name": "Expire Date",
+                "position": 4,
+                "prompt": "Expire Date",
+                "prompt_schema": null,
+                "prompt_type": "basic"
+            },
+            "715317": {
+                "data_type": "TEXT",
+                "description": "date return in the format MM/DD/YYYY",
+                "field_visibility": "VISIBLE",
+                "lines": [],
+                "model_type": "DEFAULT",
+                "name": "Issue Date",
+                "position": 5,
+                "prompt": "Issue Date",
+                "prompt_schema": null,
+                "prompt_type": "basic"
+            },
+            "715318": {
+                "data_type": "TEXT",
+                "description": "return either as M or F",
+                "field_visibility": "VISIBLE",
+                "lines": [],
+                "model_type": "DEFAULT",
+                "name": "Gender",
+                "position": 6,
+                "prompt": "Gender",
+                "prompt_schema": null,
+                "prompt_type": "basic"
+            },
+            "715319": {
+                "data_type": "TEXT",
+                "description": "return the full name of state",
+                "field_visibility": "VISIBLE",
+                "lines": [],
+                "model_type": "DEFAULT",
+                "name": "State",
+                "position": 7,
+                "prompt": "State",
+                "prompt_schema": null,
+                "prompt_type": "basic"
+            }
+        },
+        "name": "Driver License"
+    },
+    "last_edited_at": "1755702054000",
+    "last_edited_class_at": "1755702049000"
+}

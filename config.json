@@ -1,0 +1,29 @@
+{
+    "release_notes": "v0.0.1",
+    "settings": {
+        "rebuild": true
+    },
+    "source": {
+        "app_id": "",
+        "dependencies": [],
+        "deployment_id": "",
+        "flow_name": "",
+        "flow_path": "",
+        "is_advanced": false,
+        "org": "ib-internal",
+        "project_id": "0198c7fe-113b-799b-be70-d95b031e6935",
+        "sb_name": "",
+        "workspace": "CICD",
+        "app_details": {
+            "name": "Wow",
+            "version": "0.0.1",
+            "description": "description",
+            "release_notes": "dcfasdf"
+        }
+    },
+    "target": {
+        "org": "ib-internal",
+        "project_id": "0198327a-0ef1-7bef-ac48-b2a983ca7968",
+        "workspace": "global"
+    }
+}

@@ -1,5 +1,6 @@
 {
     "project_data": {
+        "activeDeployedSolutionId": "5888e25a-95b6-4f73-8c72-ffa74a069a7a",
         "createdAtMs": "1755701973000",
         "creationBase": "NONE",
         "dataMountPath": "ib-internal/vinay.thapa_instabase.com/fs/Instabase Drive/aihub/0198c7fe-113b-799b-be70-d95b031e6935",
@@ -12,9 +13,21 @@
         "projectMountPath": "ib-internal/vinay.thapa_instabase.com/fs/Instabase Drive/aihub/0198c7fe-113b-799b-be70-d95b031e6935",
         "repoId": "c869d2df-ae6f-42e9-b433-6e0595d5ab60",
         "schemaVersion": "1",
-        "settings": {},
+        "settings": {
+            "advanced_ocr": {
+                "isChangeLanguageType": false,
+                "isSelectCheckboxes": false,
+                "isSelectFileAsImage": false,
+                "isSelectTables": true,
+                "languageType": "standard",
+                "nativeExcelProcessing": true,
+                "pagesText": "",
+                "splitByPage": false,
+                "version": "v1"
+            }
+        },
         "type": "BUILD",
-        "updatedAtMs": "1755701981000",
+        "updatedAtMs": "1756733973000",
         "workspace": "vinay.thapa_instabase.com"
     },
     "project_schema": {
@@ -141,12 +154,12 @@
     "project_validations": [],
     "reader_profile": {
         "createdBy": "",
-        "createdOn": 1755701973088,
+        "createdOn": 1756733972390,
         "defaultProfile": "",
         "foundationVersion": "",
         "inputPath": null,
         "lastModifiedBy": "",
-        "lastModifiedOn": 1755701973088,
+        "lastModifiedOn": 1756733972390,
         "outputPath": null,
         "profiles": [
             {
@@ -177,16 +190,18 @@
                             "model_version": "1.0.0"
                         }
                     ],
-                    "extract_all_pdf_layers": true,
+                    "extract_all_pdf_layers": false,
                     "find_lines": false,
                     "fonts": null,
-                    "force_image_ocr": false,
+                    "force_image_ocr": true,
                     "image_filters": null,
-                    "languages": null,
+                    "languages": [
+                        "en"
+                    ],
                     "layout_algorithm": "layout_algo_spatial",
                     "model_specific_settings": {
                         "marx_v1": {
-                            "version": "v3"
+                            "version": "layout_v3"
                         }
                     },
                     "native_excel_processing": true,
